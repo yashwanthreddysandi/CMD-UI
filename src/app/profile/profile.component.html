@@ -1,0 +1,86 @@
+<div class="container-fluid bg-container mb-3 pt-2">
+    <div class="row bg-white shadow-sm top-section">
+        <div class="col-12 d-flex flex-row p-2 justify-content-between">
+            <div class="d-flex flex-row">
+            <div>
+                <i class="far fa-arrow-left back-icon"></i>
+            </div>
+            <div class="d-flex flex-row mt-2">
+                <div class="profile-container mt-3">
+                    <img src="https://images.pexels.com/photos/2078265/pexels-photo-2078265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="card-img">
+                </div>
+                <div class="ms-3 mt-3">
+                    <h3>{{patient.Name}}</h3>
+                    <p>Tel: {{patient.MobileNumber}}</p>
+                    <div class="d-flex flex-row">
+                        <div class="m-2">
+                            <span class="material-icons chat-icon">comment</span>
+                        </div>
+                        <div class="m-1">
+                            <span class="material-icons call-icon">phone</span>
+                        </div>
+                        <div class="">
+                            <span class="material-icons v-call-icon">video_call</span>
+                        </div>    
+                    </div>
+                </div>
+            </div> 
+            <button class="add-pres-button-container m-5 shadow-sm">
+                <div class="d-flex flex-column justify-content-center mt-2">
+                    <i class="fas fa-file-medical add-pres-icon"></i>
+                    <p class="add-pres-text">Add<br>Prescription</p>
+                </div>
+            </button>
+            </div>
+            <div class="d-flex flex-row mt-2 me-4 col-7">
+            <div class="">
+                <div class="ms-4">
+                    <p class="att-head">Info</p>
+                    <div class="d-flex flex-row">
+                        <p class="mb-0">{{patient.Age}}</p>
+                        <span class="material-icons gender-icon">
+                            male
+                            </span>
+                        <P class="mb-0 att-text">{{patient.DateOfBirth}}</P>
+                    </div>
+                    <div class="d-flex flex-row">
+                        <p class="mb-0 att-text">{{patient.Height}} cm</p>
+                        <i class="fas fa-tint blood-icon"></i>
+                        <p class="mb-0 att-text">{{patient.BloodGroup}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="vr-line"></div> 
+            <div>
+                <p class="att-head">Allegies</p>
+                <div>
+                    <p class="att-text" *ngFor="let al of Allergies">{{al.Name}}</p>
+                </div>
+            </div>  
+            <div class="vr-line"></div>
+            <div>
+                <p class="att-head">Active Issues</p>
+                <div>
+                    <p class="att-text" *ngFor="let ai of ActiveIssues">{{ai.Name}}</p>
+                </div>
+            </div>
+            <div class="vr-line"></div>
+            <div>
+                <p class="att-head">Medical Problems</p>
+                <div>
+                    <p class="att-text" *ngFor="let mp of MedicalProblems">{{mp.Name}}</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-2">
+        <div class="col-5">
+            <app-symptom-history></app-symptom-history>
+        </div>
+        <div class="col-5">
+            <app-appointment-history></app-appointment-history>
+        </div>
+    </div>
+</div>
+<!-- <button (click)="OnClick()">Logout</button> -->

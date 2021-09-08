@@ -1,0 +1,29 @@
+<div class="">
+    <div class="symptom-card-container  m-2">
+        <div class="d-flex flex-row justify-content-between">
+            <h1 class="symptom-head">Symptoms History</h1>
+            <div class="plus-container me-2">
+                <i class="far fa-plus text-primary plus-icon mb-0"></i>
+            </div>
+        </div>
+        <hr class="hr-line">
+        <div class="symptom-container">
+            <div *ngFor="let symptom of symptoms let id=index">
+                <div class="d-flex flex-row">
+                    <p class="w-50 symptom-sub-head">{{symptom.Name}}</p>
+                    <div class="noti-count-container mt-2 ms-3 me-3">
+                        <p class="noti-count">{{id+1}}</p>
+                    </div>
+                    <a class="ms-3 mt-1 show-container"  (click)="showDetail()">{{view}}<i class="fas fa-chevron-down down-icon ms-2" *ngIf="!show"></i><i class="fas fa-chevron-up down-icon ms-2" *ngIf="show"></i></a>
+                    <!-- <a class="ms-5 mt-1 show-container" (click)="showDetail()">{{view}}<i class="fas fa-chevron-up down-icon ms-2"></i></a> -->
+                </div>
+                <div class="d-flex flex-row" *ngIf="show">
+                    <div class="w-50 me-3">
+                        <p class="des-text">{{symptom.Description}}</p>
+                        <p class="dr-name">Dr. Ajay, Dr. Arya</p>
+                    </div>
+                </div>
+                <hr class="mt-1">
+            </div>
+        </div>
+    </div>

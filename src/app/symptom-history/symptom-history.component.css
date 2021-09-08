@@ -1,0 +1,141 @@
+.bg-container {
+    background-color: rgb(234,234,234);
+    height: 90vh;
+}
+
+.back-icon {
+    font-size: 24px;
+    color: grey;
+    font-weight: 500;
+}
+
+.profile-container {
+    height: 100px;
+    width: 100px;
+    border-width: 0px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.card-img {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -25%;
+    height: 100%;
+    width: auto;
+}
+
+.symptom-card-container {
+    background-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(139, 145, 151, 0.5);
+    height: 60vh;
+    padding: 10px;
+}
+
+.symptom-head {
+    font-size: 24px;
+    font-weight: 400;
+    color: cornflowerblue;
+}
+
+.plus-container {
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    border-width: 0.5px;
+    border-style: solid;
+    border-color: rgb(139, 145, 151, 0.3);
+    text-align: center;
+}
+
+.plus-icon {
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 9px;
+}
+
+.hr-line {
+    border-top: 1px solid black;
+    border-bottom: 0.5px solid black;
+    margin-top: 5px;
+}
+
+.symptom-container {
+    overflow-y: scroll;
+    position: relative;
+    height: 83%;
+}
+
+.noti-count-container {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.noti-count {
+    color: white;
+    font-size: 10px;
+    text-align: center;
+}
+
+.show-container {
+    text-decoration: none;
+    color: darkslategray;
+    font-family: 'Segoe UI', 'Verdana', sans-serif;
+}
+
+.down-icon {
+    font-size: 10px;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: grey white;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: white;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 20px;
+    border: 3px solid white;
+  }
+
+  .symptom-sub-head {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 20px;
+      margin-left: 10px;
+      color: darkslategray;
+  }
+
+  .des-text {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      color: darkslategray;
+      margin-left: 20px;
+      margin-bottom: 0px;
+  }
+
+  .dr-name {
+      font-size: 14px;
+      color: lightslategrey;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin-left: 20px;
+      margin-bottom: 5px;
+  }
+
+  .text-increase {
+      font-size: 24px;
+  }

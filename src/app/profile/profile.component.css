@@ -1,0 +1,117 @@
+.bg-container {
+    background-color: lavender;
+}
+
+.back-icon {
+    font-size: 24px;
+    color: grey;
+    font-weight: 500;
+}
+
+.profile-container {
+    height: 100px;
+    width: 100px;
+    border-width: 0px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.card-img {
+    display: inline;
+    margin: 0 auto;
+    margin-left: -25%;
+    height: 100%;
+    width: auto;
+}
+
+.chat-icon {
+    color: cornflowerblue;
+    font-size: 28px;
+}
+
+.call-icon {
+    color: cornflowerblue;
+    font-size: 30px;
+    border: 0px;
+    border-left: 1px;
+    border-right: 1px;
+    border-style: solid;
+    border-color: rgba(216, 216, 216, 0.3);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.v-call-icon {
+    color: cornflowerblue;
+    font-size: 38px;
+}
+
+.vr-line {
+    border-left: 1px;
+    border-right: 1px;
+    border-style: solid;
+    border-color: rgba(216, 216, 216, 0.3);
+    height: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.gender-icon {
+    color: cornflowerblue;
+    font-size: 20px;
+    margin: 3px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.blood-icon {
+    color: red;
+    font-size: 18px;
+    margin: 3px;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+.att-head {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: gray;
+    font-size: 16px;
+}
+
+.att-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+
+.top-section {
+    border: 0px;
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: rgba(216, 216, 216, 0.3);
+}
+
+.add-pres-text {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.add-pres-icon {
+    font-size: 40px;
+    color: cornflowerblue;
+}
+
+.add-pres-button-container {
+    height: 100px;
+    width: 100px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgba(216, 216, 216, 1);
+    text-align: center;
+    background-color: white;
+
+}

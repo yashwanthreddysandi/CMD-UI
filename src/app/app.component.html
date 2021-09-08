@@ -1,0 +1,64 @@
+<!-- <div class="container container-bg mt-5 p-3 mb-3"> -->
+  <!-- <app-card></app-card> -->
+  <!-- <app-cards-container></app-cards-container> -->
+  <!-- <app-sidebar></app-sidebar>
+</div> -->
+<!-- <app-profile></app-profile> -->
+<div class="sidebar open">
+  <div class="logo-details" >    
+      <span class="logo_span"><div class="logo_name">CONNECT MY DOC</div></span>
+      <i class='bx bx-menu-alt-right'></i>
+  </div>
+  <ul class="nav-list" style="padding-left: 0;">
+    <li class="toggle_link active" onclick="toggle(event)" id="btnOpen">
+      <a href="#" class="active">
+        <i class='bx bx-bar-chart-alt-2'></i>
+        <span class="links_name">Dashboard</span>
+      </a>
+       <span class="tooltip">Dashboard</span>
+    </li>
+    <li class="toggle_link" onclick="toggle(event)" id="btnClose">
+     <a [routerLink]="['cardContainer']" class="active">
+       <i class='far fa-user'></i>
+       <span class="links_name">Patients</span>
+     </a>
+     <span class="tooltip">User</span>
+   </li>
+  </ul>
+</div>
+<div class="home-section">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5" style="box-shadow: 0 2px 10px -1px rgba(0, 0, 0, 0.5);">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"  id="navbarTogglerDemo02">
+          <div class="">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Logout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-1" href="#"><i class="fas fa-bell"></i></a>
+                    
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="font-size: small;">John Doe</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="" class="nav-link">
+                          <img width="25px" height="25px" style="border-radius: 20px;" src="https://cvbay.com/wp-content/uploads/2017/03/dummy-image.jpg" alt="jon-doe">
+                      </a>
+                    </li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+    
+    <!-- <app-navbar></app-navbar> -->    
+</div>
+

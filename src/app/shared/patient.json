@@ -1,0 +1,17 @@
+[
+    {
+        "$id":"1",
+        "Id":1,
+        "Name":"Raj",
+        "Location":"India",
+        "Gender":"Male",
+        "BloodGroup":"AB-",
+        "Height":158,
+        "DateOfBirth":"1989-08-30T00:00:00",
+        "Image":"Image1","MobileNumber":98987654
+    },
+    {
+        "$id":"2",
+        "Id":2,
+        "Name":"John",
+        "Location":"Washington","Gender":"Male","BloodGroup":"A+","Height":170,"DateOfBirth":"1989-08-08T00:00:00","Image":"Image1","MobileNumber":41234567},{"$id":"3","Id":3,"Name":"Kim","Location":"New York","Gender":"Male","BloodGroup":"B+","Height":165,"DateOfBirth":"1989-10-08T00:00:00","Image":"Image2","MobileNumber":234567123},{"$id":"4","Id":4,"Name":"Natasha","Location":"Los Angeles","Gender":"Female","BloodGroup":"A-","Height":155,"DateOfBirth":"1989-08-18T00:00:00","Image":"Image3","MobileNumber":98765432},{"$id":"5","Id":5,"Name":"Ramesh","Location":"Cannada","Gender":"Male","BloodGroup":"O-","Height":160,"DateOfBirth":"1989-05-08T00:00:00","Image":"Image3","MobileNumber":78789865},{"$id":"6","Id":6,"Name":"Rakesh","Location":"India","Gender":"Male","BloodGroup":"AB+","Height":171,"DateOfBirth":"1989-08-28T00:00:00","Image":"Image4","MobileNumber":98987867}]

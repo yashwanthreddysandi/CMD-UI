@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex flex-row justify-content-between mb-2">
+            <h3 class="page-heading">Patients</h3>
+            <div class="bg-white search-container align-self-center d-flex flex-row">
+                <i class="far fa-search search-icon"></i>
+                <div>
+                    <input type="text" [(ngModel)]="prefix" (ngModelChange)='OnSearch($event)' class="input" placeholder="Search Name...." >
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let n of tempPatientList  | paginate: { itemsPerPage: 12, currentPage: page, totalItems:totallength }"
+                class="d-flex flex-row col-4">
+                <a routerLink="/profile" (click)="onclick(n)" class="w-100 card-link"><app-card [patient]="n"></app-card></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="d-flex flex-row justify-content-end m-2 p-2">
+                <pagination-controls [previousLabel]="labels.previousLabel" [nextLabel]="labels.nextLabel"
+                    class="pagination" (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <app-profile></app-profile> -->

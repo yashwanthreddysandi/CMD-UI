@@ -1,7 +1,12 @@
+.card {
+    height: 100px;
+}
 .card-heading {
     font-size: 12px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .card-text {
@@ -9,7 +14,8 @@
     font-size: 10px;
     color: grey;
     margin-top: 0px;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
+    margin-top: -5px;
 }
 
 .img-container {

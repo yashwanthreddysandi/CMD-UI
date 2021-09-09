@@ -1,0 +1,142 @@
+<div class="row">
+    <div class="col-4">
+        <!-- <app-prescription-detail-form></app-prescription-detail-form> -->
+        <div class="card-container">
+            <div class="card-head">
+              Prescription Detail
+            </div>
+            <div class="form-container pt-2">
+                <form [formGroup]="addMedicineForm">
+                    <div class="d-flex flex-column align-self-center w-100 ms-4">
+                        <input type="text" placeholder="Search For Medicine" class="input-style mb-0" formControlName="medicine"
+                        [formControl]="control"
+                        [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let med of filteredMedicines | async" [value]="med">
+                              {{med}}
+                            </mat-option>
+                        </mat-autocomplete>
+                        <p class="eg-text ms-3">Eg. talet, vicks</p>
+                    </div>
+                    <div class="d-flex flex-column align-self-center w-100 ms-4">
+                        <input type="number" placeholder="Medicine Duration" class="input-style mb-0" formControlName="duration">
+                        <p class="eg-text ms-3">Eg. days</p>
+                    </div>
+                    <div class="d-flex flex-row align-self-center w-100 ms-4">
+                        <div class="d-flex flex-row">
+                            <!-- <input type="text" placeholder="Medicine Cycle" class="input-style mb-0">
+                            <p class="eg-text ms-3">Eg. talet, vicks</p> -->
+                            <div class="m-2">
+                                <input type="checkbox" class="" formControlName="morning" id="morning">
+                                <label for="morning">M</label>
+                            </div>
+                            <div class="m-2">
+                                <input type="checkbox" class="" id="afternoon" formControlName="afternoon">
+                                <label for="afternoon">A</label>
+                            </div>
+                            <div class="m-2">
+                                <input type="checkbox" class="" id="evening" formControlName="evening">
+                                <label for="evening">E</label>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="ms-4">
+                                <p class="mb-0 ms-2 food">Food</p>
+                            </div>
+                            <div class="form-check form-switch d-flex flex-row">
+                                <p class="form-check-label me-5" for="flexSwitchCheckDefault">After</p>
+                                <input class="form-check-input" type="checkbox" formControlName="food" id="flexSwitchCheckDefault">
+                                <p class="form-check-label ms-3" for="flexSwitchCheckDefault">Before</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-self-center w-100 ms-4">
+                        <input type="text" placeholder="Medicine Description to Patient" formControlName="description" class="input-style mb-0">
+                        <p class="eg-text ms-3">Eg. don't use hot water to consume tablets</p>
+                    </div>
+                </form>
+            </div>
+            <button class="addButton" type="submit" (click)="addMedicineFn()">
+                Add Medicine
+            </button>
+        </div>
+    </div>
+    <div class="col-5">
+        <!-- <app-prescription-details [medicine]="newMedicine"></app-prescription-details> -->
+        <div style="margin: 50px; width: 600px;">
+            <div class="card">
+                <h5 class="card-header" style="padding-top: 20px">
+                    <div class="row" style="font-weight: 700; color: rgb(25, 56, 92)">
+                        <div class="col-5">
+                            <h3>Prescription Deatils</h3>
+                        </div>
+                        <div class="col-4 text-right">
+                            <h4>Total : 156</h4>
+                        </div>
+                        <div class="col-3 text-right">
+                            <h1>3</h1>
+                        </div>
+                    </div>
+                </h5>
+                <div class="card-scroll">
+                    <div class="card-body" *ngFor="let med of newMedicineList let id = index">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5 class="card-title">
+                                    <h2>{{id+1}}.</h2>
+                                    <h3>{{med.medicine}}</h3>
+                                </h5>
+                                <p class="card-text">
+                                    {{med.description}}
+                                </p>
+                            </div>
+                            <div class="col-3 price text-right">
+                                <h2>₹35</h2>
+                            </div>
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-8 food-cycle" style="align-content: center">
+                                        <div class="row" style="margin-left: 0px">
+                                            <button class="btn-sm" style="
+                            width: 70px;
+                            border: none;
+                            background-color: rgb(45, 98, 109);
+                            color: white;
+                          font-size: 10px;">
+                                                after food
+                                            </button>
+                                        </div>
+                                        <div class="row" style="margin-left: 0px; width: 200px">
+                                            <ul class="base-timeline">
+                                                <li class="base-timeline__item">
+                                                    <span class="base-timeline__summary-text"></span>
+                                                </li>
+                                                <li class="base-timeline__item base-timeline__item--active">
+                                                    <span class="base-timeline__summary-text"></span>
+                                                </li>
+                                                <li class="base-timeline__item">
+                                                    <span class="base-timeline__summary-text"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-4" >
+                                        <span class="material-icons" (click)="delete(id)" style="color: red; font-size: 40px; padding-top: 20px">
+                                            close
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="width: 90%; margin: 0 auto;">
+                    </div>
+                    
+                </div>
+                <button class="card-footer" (click)="addToExcel()">
+                    <h1>CONFIRM</h1>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

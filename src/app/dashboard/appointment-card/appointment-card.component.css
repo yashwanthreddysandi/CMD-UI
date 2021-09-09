@@ -1,0 +1,99 @@
+.vertical{
+    border-right: 1px solid rgb(216, 215, 215) ;
+    padding-left: 7px;
+    padding-top: 10px;
+    height: 20px;
+}
+
+.vertical2{
+    border-right: 1px solid rgb(216, 215, 215) ;
+    padding-bottom: 60px;
+    height: 20px;
+    display:inline-flex;
+}
+.card{
+    border-radius: 7px;
+}
+
+.material-icons{
+    color: rgb(75,145,255);
+}
+.name{
+    color: rgb(46, 125, 143);
+    font-size: 13px;
+    font-weight: 600;
+}
+.time{
+    font-family:'Archivo Black', sans-serif; font-size: 2em; font-weight: 900;text-align: center;
+}
+.date{
+    text-align: center;font-size: 0.9em
+}
+div.scroll {
+    max-width: 100px;
+    max-height: 60px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:left;
+    overflow:auto
+}
+.allergies{
+font-style: italic;
+margin-bottom: 0;
+color: rgb(173, 173, 173);
+font-family: 'Times New Roman', Times, serif;
+font-size: 13px;
+
+}
+::-webkit-scrollbar {
+    width: 3px  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 10px;
+  }
+
+  .btn-done{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-content: center;
+    overflow: hidden;
+    transition: .4s;
+    border-color: green;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  
+  .btn-done:hover{
+      background: green;
+  }
+  .btn-can{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-content: center;
+    overflow: hidden;
+    transition: .4s;
+    border-color: tomato;
+    border-width: 1px;
+    border-style: solid;
+  }
+  
+  .btn-can:hover{
+      background: tomato;
+  }
+  

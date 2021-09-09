@@ -52,9 +52,4 @@ export class CardsContainerComponent implements OnInit {
     this.tempPatientList = searchedPatientList;
   }
 
-  onclick(patient: Patient){
-    // console.log("This is somethin", patient);
-    this.service.setCurrentPatient(patient);
-  }
-
 }

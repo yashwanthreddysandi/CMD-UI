@@ -1,0 +1,100 @@
+.card{
+    border-radius: 30px;
+}
+h1,h2,h3,h4,h5,h6{
+    display:inline
+}
+
+.fa-circle{
+ margin-left: 15px;
+ padding-top: 7px;
+}
+.hr-line {
+    width: 70px;
+    position: absolute;
+    margin: 15px;
+    border-bottom: 1px solid #000;
+    z-index: 2;
+  }
+  
+ul, li {
+    margin:0;
+    padding: 0;
+    
+  }
+
+  /* START TIMELINE 
+   the width of the list parent is optional 
+  if you set this width 
+  A hover sample effect is added as well as an active state*/
+  
+  .base-timeline {
+      list-style-type: none;
+      position: relative;
+      display: block;
+      z-index: 2;
+      width: 75%; /* change or remove*/
+    
+  }
+  
+  .base-timeline::before {
+        content: '';
+        width: 60px;
+        border-top: 2px solid rgb(110, 110, 110);
+        display: inline-block;
+        position: absolute;
+        top: 13px;
+        left: 8px;
+        z-index: -1;
+  
+  }
+  
+  /* set width of time-line this can be px, percentage or other unit
+  3 is the number of list items minus 1 when using percentage
+  */
+  .base-timeline__item {
+        position: relative;
+        display: inline-block;
+        width: 30px;
+  }
+  
+  .base-timeline__item::before {
+          display: flex;
+          justify-content: center;
+          align-items: center; /* number -1*/
+          content: ''; 
+          border-radius: 50%;
+          width: 10px;
+          height: 10px;
+          background-color: steelblue;
+          border-color: #000;
+          border-style: solid;
+          border-width: 1px;
+          font-weight: bold;
+  }
+
+  /* modifier with use of the data-year attribute */
+  /* hover element *
+  /* summary text is optional and can be anything */
+  .food-cycle{
+    border-right: rgb(160, 160, 160) solid 1px;
+    border-left: rgb(160, 160, 160) solid 1px;
+  }
+  .card-footer{
+      background-color: rgb(25, 56, 92);
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      text-align: center;
+      color: white;
+      border-width: 0px;
+  }
+
+  .card-scroll {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 400px;
+  }
+
+  .card-bottom-border {
+      border-bottom: 1px solid grey;
+  }

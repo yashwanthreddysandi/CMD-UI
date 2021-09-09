@@ -1,0 +1,43 @@
+<div class="container">
+    <div style="  position: -webkit-sticky;
+    position: sticky; top: 0; padding-top: 20px; z-index: 20; background-color: rgb(238,239,240)">
+        <div class="row" style="margin-top: 0px;">
+            <div class="col-3">
+                <h1>Appointments</h1>
+            </div>
+            <div class="col-3" >
+                <button class="btn-sm" style="border-radius: 10px;background-color: white; border: none;"><img src="../../assets/stethoscope.png" alt="" style="height: 20px;width: 20px; margin-right: 10px;">Dr.John Doe</button> 
+            </div>
+        </div>
+        <div >
+            <app-top-dashboard></app-top-dashboard>
+        </div>
+        <hr style="margin-top: 40px;">
+    </div>
+
+    <div style="margin-top: 20px; position:static; z-index: -1;">
+        <div class="row">
+            <div
+              *ngFor="
+                let n of tempAppoitnments
+                  | paginate
+                    : { itemsPerPage: 8, currentPage: page, totalItems: totallength }
+              "
+              class="col-3"
+            >
+              <a href="#" class="w-100 card-link"><app-appointment-card [Appointment]="n"></app-appointment-card></a>
+            </div>
+            <div class="d-flex flex-row justify-content-end">
+              <pagination-controls
+                [previousLabel]="labels.previousLabel"
+                [nextLabel]="labels.nextLabel"
+                class="pagination"
+                (pageChange)="page = $event"
+              ></pagination-controls>
+            </div>
+          </div>
+    </div>
+    
+</div>
+
+

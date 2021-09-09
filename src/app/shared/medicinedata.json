@@ -1,0 +1,21 @@
+[
+    {"name":"crocine","price":35},
+    {"name":"vicks","price":45},
+    {"name":"Diclofenac","price":40},
+    {"name":"Etopside","price":55},
+    {"name":"Morphine","price":34},
+    {"name":"Benadryl","price":24},
+    {"name":"Coreg","price":32},
+    {"name":"Azithral","price":100},
+    {"name":"Avil","price":32},
+    {"name":"Flexon","price":54},
+    {"name":"Gabapin","price":12},
+    {"name":"Paracetamol","price":87},
+    {"name":"Pregablin","price":34},
+    {"name":"Toradol","price":29},
+    {"name":"Turmeric","price":15},
+    {"name":"Winlevi","price":23},
+    {"name":"Zinc","price":78},
+    {"name":"Zofron","price":38},
+    {"name":"Nicotine","price":5}
+]

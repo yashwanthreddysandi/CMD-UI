@@ -1,0 +1,5 @@
+.bg-container {
+    backdrop-filter: blur(6px);
+    background-color: transparent;
+    
+}

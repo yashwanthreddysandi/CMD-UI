@@ -14,10 +14,10 @@
                     <div class="noti-count-container mt-2 ms-3 me-3">
                         <p class="noti-count">{{id+1}}</p>
                     </div>
-                    <a class="ms-3 mt-1 show-container"  (click)="showDetail()">{{view}}<i class="fas fa-chevron-down down-icon ms-2" *ngIf="!show"></i><i class="fas fa-chevron-up down-icon ms-2" *ngIf="show"></i></a>
+                    <button class="ms-3 mt-1 show-container show-button"  (click)="showDetail(id)">{{view[id]}}<i class="fas fa-chevron-down down-icon ms-2" *ngIf="view[id]=='Show'"></i><i class="fas fa-chevron-up down-icon ms-2" *ngIf="view[id]=='Hide'"></i></button>
                     <!-- <a class="ms-5 mt-1 show-container" (click)="showDetail()">{{view}}<i class="fas fa-chevron-up down-icon ms-2"></i></a> -->
                 </div>
-                <div class="d-flex flex-row" *ngIf="show">
+                <div class="d-flex flex-row" *ngIf="showList[id]">
                     <div class="w-50 me-3">
                         <p class="des-text">{{symptom.Description}}</p>
                         <p class="dr-name">Dr. Ajay, Dr. Arya</p>

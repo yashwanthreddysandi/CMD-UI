@@ -9,16 +9,20 @@ import { Patient } from './Patient';
 export class PatientService {
 
 
-  constructor(private http: HttpClient) { }
+  medList : any[];
 
-  currentPatient !: Patient;
+  constructor(private http: HttpClient) {
+    this.medList = [];
+   }
 
-  setCurrentPatient(patient: Patient){
-    this.currentPatient = patient;
+  medicinedetail !: any;
+
+  addMedList(data: any) {
+    this.medList.push(data);
   }
 
-  getCurrentPatient(){
-    return this.currentPatient;
+  getMedList(){
+    return this.medList;
   }
 
   getPatientDetails(){
@@ -26,23 +30,27 @@ export class PatientService {
   }
 
   getPatientDetailsById(id : number) {
-    return this.http.get<any>(`http://localhost:59848/api/patient/patient/${id}`)
+    return this.http.get<any>(`http://localhost:59848/api/patient/${id}`)
   }
 
   getAllergies(id: number){
-    return this.http.get<any>(`http://localhost:59848/api/patient/allergy/${id}`);
+    return this.http.get<any>(`http://localhost:59848/api/allergy/${id}`);
   }
 
   getSymptoms(id: number) {
-    return this.http.get<any>(`http://localhost:59848/api/patient/symptom/${id}`)
+    return this.http.get<any>(`http://localhost:59848/api/symptom/${id}`)
   }
 
   getActiveIssues(id: number){
-    return this.http.get<any>(`http://localhost:59848/api/patient/activeissue/${id}`)
+    return this.http.get<any>(`http://localhost:59848/api/activeissue/${id}`)
   }
 
   getMedicalProblems(id: number){
-    return this.http.get<any>(`http://localhost:59848/api/patient/medicalproblem/${id}`)
+    return this.http.get<any>(`http://localhost:59848/api/medicalproblem/${id}`)
+  }
+
+  getAppointmentsByPatientId(id:number){
+    return this.http.get<any>(`http://localhost:59281/api/appointment/patient/${id}`)
   }
 
 }

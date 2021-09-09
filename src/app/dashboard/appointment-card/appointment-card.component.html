@@ -1,0 +1,99 @@
+
+
+
+<div class="m-3.5" style="padding: 10px;">
+    <div class="card shadow" style="width: auto; height: auto">
+            <div class="card-header" style="padding: 20px">
+              <div class="row">
+                <div class="col-5">
+                  <img
+                    src="../../assets/profile Image.jpg"
+                    alt=""
+                    class="responsive"
+                    style="
+                      border-radius: 35px;
+                      width: auto;
+                      max-width: 60px;
+                      height: auto;
+                    "
+                  />
+                </div>
+                <div class="col-7">
+                  <div class="row">
+                    <h5 class="name">{{ Appointment.AppointmentTime }}</h5>
+                  </div>
+                  <div class="row">
+                    <div class="col-6" style="padding: 0; margin: 0">
+                      <a
+                        *ngIf="!addParameter"
+                        class="btn-done"
+                        (click)="toggleForm()"
+                        ><mat-icon style="color: rgb(197, 197, 197)"
+                          >done</mat-icon
+                        ></a
+                      >
+                    </div>
+                    <div class="col-6" style="padding: 0; margin: 0">
+                      <a
+                        *ngIf="!addParameter"
+                        class="btn-can"
+                        (click)="toggleForm()"
+                        ><mat-icon style="color: rgb(197, 197, 197)"
+                          >close</mat-icon
+                        ></a
+                      >
+                    </div>
+                    <div
+                      class="col-4"
+                      *ngIf="addParameter"
+                      style="padding: 0; margin: 0"
+                    >
+                      <mat-icon aria-hidden="false" aria-label="Example home icon"
+                        >chat
+                      </mat-icon>
+                      <span class="vertical"></span>
+                    </div>
+                    <div
+                      class="col-4"
+                      *ngIf="addParameter"
+                      style="padding: 0; margin: 0"
+                    >
+                      <mat-icon aria-hidden="false" aria-label="Example home icon"
+                        >call
+                      </mat-icon>
+                      <span class="vertical"></span>
+                    </div>
+                    <div
+                      class="col-4"
+                      *ngIf="addParameter"
+                      style="padding: 0; margin: 0"
+                    >
+                      <mat-icon aria-hidden="false" aria-label="Example home icon"
+                        >video_call
+                      </mat-icon>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-6" style="padding: 0; margin: 0">
+                  <div class="row">
+                    <p class="time">10:30</p>
+                    <br />
+                    <p class="date">12/06/20</p>
+                  </div>
+                </div>
+                <div class="col-1" style="padding: 0; margin: 0">
+                  <span class="vertical2"></span>
+                </div>
+                <div class="col-5 scroll" style="padding: 0; margin: 0">
+                  <p class="allergies">
+                    Allergies recurring sample data for stomach pain malaria headache nausea
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>

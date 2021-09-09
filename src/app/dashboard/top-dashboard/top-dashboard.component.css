@@ -1,0 +1,27 @@
+#divChart{
+    display: block;
+    width: auto;
+    height: auto;
+}
+#divChart1{
+    display: block;
+    width: auto;
+    height: auto;
+}
+#divChart2{
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+.card-text{
+    float: left;font-family:'Archivo Black', sans-serif; font-size: 2.6em; font-weight: 800;
+}
+.card{
+    border-radius: 10px;
+}
+h5{
+   color: rgb(46, 125, 143);
+   font-size: 15px;
+   font-weight: 500;
+}

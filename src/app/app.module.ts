@@ -5,16 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { CardsContainerComponent } from './cards-container/cards-container.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MsalAngularConfiguration, MsalInterceptor, MsalModule, MsalService, MSAL_CONFIG, MSAL_CONFIG_ANGULAR } from '@azure/msal-angular';
 import { Configuration } from 'msal';
 import { msalAngularConfig, msalConfig } from './app-config';
 import { SymptomHistoryComponent } from './symptom-history/symptom-history.component';
 import { AppointmentHistoryComponent } from './appointment-history/appointment-history.component';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './dialog/dialog.component';
+import { PrescriptionDetailFormComponent } from './prescription-detail-form/prescription-detail-form.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { PrescriptionDetailsComponent } from './prescription-details/prescription-details.component';
+import { AppointmentCardComponent } from './dashboard/appointment-card/appointment-card.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { TopDashboardComponent } from './dashboard/top-dashboard/top-dashboard.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+
+
+
 
 function MSALConfigFactory(): Configuration {
   return msalConfig;
@@ -33,7 +47,13 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     ProfileComponent,
     SidebarComponent,
     SymptomHistoryComponent,
-    AppointmentHistoryComponent
+    AppointmentHistoryComponent,
+    DialogComponent,
+    PrescriptionDetailFormComponent,
+    PrescriptionDetailsComponent,
+    AppointmentCardComponent,
+    DashboardComponent,
+    TopDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +61,14 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     HttpClientModule,
     NgxPaginationModule,
     FormsModule,
-    MsalModule
+    MsalModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [
     {

@@ -9,13 +9,12 @@ import { Patient } from '../shared/Patient';
 
 export class CardComponent implements OnInit {
 
-  @Input() patient !: Patient;
+  @Input('patient') patient !: Patient;
 
   constructor() { }
 
   ngOnInit(): void {
-    // console.log(this.patient);
-    // console.log(this.patientId);
+    
   }
 
 }

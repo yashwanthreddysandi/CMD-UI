@@ -30,6 +30,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 
 
+
 function MSALConfigFactory(): Configuration {
   return msalConfig;
 }
@@ -68,7 +69,7 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [
     {

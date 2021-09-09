@@ -10,7 +10,7 @@
                     <img src={{patient.Image}} alt="" class="card-img">
                 </div>
                 <div class="ms-3 mt-3">
-                    <h3>{{patient.Name}}</h3>
+                    <h3 class="p-name">{{patient.Name}}</h3>
                     <p>Tel: {{patient.MobileNumber}}</p>
                     <div class="d-flex flex-row">
                         <div class="m-2">
@@ -28,7 +28,7 @@
             <button (click)="openDialog()" class="add-pres-button-container m-5 shadow-sm">
                 <div class="d-flex flex-column justify-content-center mt-2">
                     <i class="fas fa-file-medical add-pres-icon"></i>
-                    <p class="add-pres-text">Add<br>Prescription Detials</p>
+                    <p class="add-pres-text">Add<br>Prescription</p>
                 </div>
             </button>
             </div>
@@ -37,7 +37,7 @@
                 <div class="ms-4">
                     <p class="att-head">Info</p>
                     <div class="d-flex flex-row">
-                        <p class="mb-0">{{patient.Age}}</p>
+                        <p class="mb-0 att-text">{{patient.Age}}</p>
                         <span class="material-icons gender-icon">
                             male
                             </span>

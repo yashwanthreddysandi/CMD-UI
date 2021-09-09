@@ -51,8 +51,17 @@
     text-align: center;
     vertical-align: middle;
     padding-top: 3px;
-    margin: 5px;
+    margin: 2px;
 }
+
+.pagination /deep/ .ngx-pagination li {
+ 
+    background: #fff;
+    border-radius: 5px;   
+    margin: 2px;
+}
+
+
 
 .card-link{
     text-decoration: none;
@@ -60,17 +69,9 @@
 }
 
 /* .pagination /deep/ .ngx-pagination .pagination-next {
-    background: white;
-    font-size: 10px;
-    border-radius: 5px;
-    height: 25px;
     width: 25px;
-    text-align: center;
-    vertical-align: middle;
-    display: inline;
-    padding: 5px;
-    padding-left: 10px;
-    margin: 5px;
+    height: 25px;
+    margin-top: 20px;
 } */
 
 /* .pagination /deep/ .ngx-pagination .pagination-previous {

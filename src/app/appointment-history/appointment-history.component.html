@@ -2,13 +2,13 @@
     <div class="appointment-card-container  m-2">
         <div class="d-flex flex-row justify-content-between">
             <h1 class="symptom-head">Appointment History</h1>
-            <select name="Year" id="" class="year-container me-2 mt-1">
-                <option value="2017">2017</option>
+            <select name="Year" (change)='filter()' [(ngModel)]='year' class="year-container me-2 mt-1">
+                <option *ngFor='let year of yearList'>{{year}}</option>
             </select>
         </div>
         <hr class="hr-line">
         <div class="appointment-container pb-2">
-            <div *ngFor='let ap of appointments' class="appointment-card mb-2 me-2">
+            <div *ngFor='let ap of filtered_appointments' class="appointment-card mb-2 me-2">
                 <div class="d-flex flex-row">
                     <div class="w-75 d-flex flex-row">
                     <div class="profile-container">
@@ -22,11 +22,14 @@
                         <p class="designation">Neurologist</p>
                     </div>
                     </div>
-                    <div class="time-container w-25 d-flex flex-row">
-                        <i class="far fa-clock align-self-center m-2"></i>
+                    <div class="time-container d-flex flex-row">
+                        <i class="far fa-clock align-self-center m-2 clock-icon"></i>
                         <div class="">
                             <p class="time">{{ap.AppointmentTime | date:'shortTime'}}</p>
-                            <p class="today">Today</p>
+                            <p *ngIf='sameDay(ap.AppointmentTime); else other' class="today">Today</p>
+                            <ng-template #other>
+                                <p class="today">{{ap.AppointmentTime | date:'mediumDate'}}</p>
+                            </ng-template>
                         </div>
                     </div>
                 </div>

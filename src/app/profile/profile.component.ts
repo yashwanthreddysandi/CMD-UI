@@ -40,8 +40,8 @@ export class ProfileComponent implements OnInit {
       width: '100%',
       height: '100%',
       // maxHeight: '100vh',
-      maxWidth: '100vw'
-
+      maxWidth: '100vw',
+      panelClass: 'custom-form-dialog'
       // data: {name: this.name, animal: this.animal}
 
     });

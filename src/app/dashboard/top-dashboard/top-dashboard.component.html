@@ -1,21 +1,20 @@
-<div class="container" style="margin-top: 30px;">
-    <div class="row flex">
-      <div class="col-4">
-        <div class="card shadow" style="width: 18rem; height: 6rem">
+<div class="" style="margin-top: 30px;">
+    <div class="row d-flex justify-content-evenly">
+        <div class="card shadow col-lg-3 col-md-4 col-sm-12 mx-2 my-2" style="width: 18rem; height: 6rem">
           <div class="card-body">
             <h5 class="card-title">Today's Appointments</h5>
             <div class="row">
-              <div class="col-sm-4">
+              <div class="col-4">
                 <div id="divChart" >
                   <canvas id="MyChart"></canvas>
                 </div>
               </div>
-              <div class="col-sm-3">
+              <div class="col-3">
                 <div>
                   <h2
                     class="card-text align-self-end mt-auto"
                   >
-                    {{ high }}
+                    {{ this.Appointments.length }}
                   </h2>
                 </div>
               </div>
@@ -34,27 +33,25 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-4">
-        <div class="card shadow" style="width: 18rem; height: 6rem">
+        <div class="card shadow col-lg-3 col-md-4 col-sm-12 mx-2 mx-sm-4 my-2" style="width: 18rem; height: 6rem">
           <div class="card-body">
             <h5 class="card-title">Total Appointments</h5>
             <div class="row">
-              <div class="col-sm-4">
+              <div class="col-4">
                 <div id="divChart1">
                   <canvas id="MyChart1"></canvas>
                 </div>
               </div>
-              <div class="col-sm-3">
+              <div class="col-3">
                 <div>
                   <h2
                     class="card-text align-self-end mt-auto"
                   >
-                    {{ high1 }}
+                    {{ high1Fn() }}
                   </h2>
                 </div>
               </div>
-              <div class="col-sm-5">
+              <div class="col-5">
                 <div>
                   <h2
                     class="card-text mt-auto"
@@ -71,27 +68,25 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-4">
-        <div class="card shadow" style="width: 18rem; height: 6rem">
+        <div class="card shadow col-lg-3 col-md-4 col-sm-12 mx-2 my-2" style="width: 18rem; height: 6rem">
           <div class="card-body">
             <h5 class="card-title">Cancelled</h5>
             <div class="row">
-              <div class="col-sm-4">
+              <div class="col-4">
                 <div id="divChart2">
                   <canvas id="MyChart2"></canvas>
                 </div>
               </div>
-              <div class="col-sm-3">
+              <div class="col-3">
                 <div>
                   <h2
                     class="card-text align-self-end mt-auto"
                   >
-                    {{ high2 }}
+                    {{ high2Fn() }}
                   </h2>
                 </div>
               </div>
-              <div class="col-sm-5">
+              <div class="col-5">
                 <div>
                   <h2
                     class="card-text mt-auto"
@@ -108,7 +103,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
   

@@ -1,5 +1,6 @@
 .card-container {
     background-color: white;
+    border-radius: 30px;
 }
 
 .card-head {
@@ -23,7 +24,7 @@
     border-style: solid;
     padding: 20px;
     border-top: 0px;
-    height: 50vh;
+    height:300px;
     width: 100%;
 }
 
@@ -140,18 +141,38 @@ ul, li {
           border-radius: 50%;
           width: 10px;
           height: 10px;
-          background-color: steelblue;
+          background-color: rgb(255, 255, 255);
           border-color: #000;
           border-style: solid;
           border-width: 1px;
           font-weight: bold;
   }
 
+  .base-timeline__item2 {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+}
+
+.base-timeline__item2::before {
+      display: flex;
+      justify-content: center;
+      align-items: center; /* number -1*/
+      content: ''; 
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: rgb(0, 174, 255);
+      border-color: #000;
+      border-style: solid;
+      border-width: 1px;
+      font-weight: bold;
+}
+
   /* modifier with use of the data-year attribute */
   /* hover element *
   /* summary text is optional and can be anything */
   .food-cycle{
-    border-right: rgb(160, 160, 160) solid 1px;
     border-left: rgb(160, 160, 160) solid 1px;
   }
   .card-footer{
@@ -166,9 +187,12 @@ ul, li {
   .card-scroll {
       overflow-y: scroll;
       overflow-x: hidden;
-      height: 400px;
+      height: 300px;
   }
 
   .card-bottom-border {
       border-bottom: 1px solid grey;
+  }
+  .btn-close-yellow {
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fc0'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
   }

@@ -19,15 +19,14 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogComponent } from './dialog/dialog.component';
 import { PrescriptionDetailFormComponent } from './prescription-detail-form/prescription-detail-form.component';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatAutocomplete, MatAutocompleteModule} from '@angular/material/autocomplete';
 import { PrescriptionDetailsComponent } from './prescription-details/prescription-details.component';
 import { AppointmentCardComponent } from './dashboard/appointment-card/appointment-card.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { TopDashboardComponent } from './dashboard/top-dashboard/top-dashboard.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -70,6 +69,7 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
     MatAutocompleteModule,
     MatCardModule,
     MatIconModule,
+    MatExpansionModule,
   ],
   providers: [
     {

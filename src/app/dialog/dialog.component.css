@@ -3,3 +3,16 @@
     background-color: transparent;
     
 }
+.fa-file-alt{
+    font-size: 100px;
+}
+.heading{
+    padding: 40px;
+    font-size: 90px;
+    font-weight: 400;
+    color: white;
+}
+.btn-close{
+    font-size: 40px;
+    float: right;
+}

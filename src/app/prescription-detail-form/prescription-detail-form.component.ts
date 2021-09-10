@@ -14,11 +14,12 @@ import { ExcelService } from '../shared/excel.service';
 })
 export class PrescriptionDetailFormComponent implements OnInit {
 
+  panelOpenState = false;
   medicines : Medicine[] = [];
   addMedicineForm : FormGroup;
 
   control = new FormControl();
-  medicineNames : string[] = []
+  medicineNames : string[] = [];
   filteredMedicines!: Observable<string[]>;
   
   newMedicine : medicineDetails;
@@ -38,7 +39,7 @@ export class PrescriptionDetailFormComponent implements OnInit {
     this.medicines = (data as any).default;
     console.log(this.medicines);
     this.medicines.forEach(el => {
-      this.medicineNames.push(el.name)
+      this.medicineNames.push(el.name);
     });
     this.newMedicine = new medicineDetails(false, false);
     this.newMedicineList = [];
@@ -46,15 +47,18 @@ export class PrescriptionDetailFormComponent implements OnInit {
    }
 
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.filteredMedicines = this.control.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
     );
+    
   }
+  
 
   private _filter(value: string): string[] {
     const filterValue = this._normalizeValue(value);
+    console.log(filterValue);
     return this.medicineNames.filter(med => this._normalizeValue(med).includes(filterValue));
   }
 
@@ -95,6 +99,7 @@ export class PrescriptionDetailFormComponent implements OnInit {
     // this.newMedicine.morning = this.addMedicineForm.value.morning;
     // this.newMedicine.evening = this.addMedicineForm.value.evening;
     this.newMedicine.medicine = this.addMedicineForm.value.medicine;
+    this.newMedicine.price = this.medicines[this.medicines.findIndex(x => x.name === this.addMedicineForm.value.medicine)].price;
     // this.newMedicine.food = this.addMedicineForm.value.food;
     this.newMedicine.description = this.addMedicineForm.value.description;
     this.newMedicine.duration = this.addMedicineForm.value.duration;
@@ -143,6 +148,7 @@ class medicineDetails {
       evening : boolean = false;
       food : boolean = false;
       description !: string;
+      price!: number;
   
   constructor(_morning: boolean, _afternoon: boolean) {
     this.morning = _morning;

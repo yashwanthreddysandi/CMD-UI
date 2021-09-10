@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div *ngFor="let n of tempPatientList  | paginate: { itemsPerPage: 12, currentPage: page, totalItems:totallength }"
-                class="d-flex flex-row col-4">
+                class="d-flex flex-row col-lg-4 col-md-6 col-sm-12">
                 <a [routerLink]="['/profile', n.Id]" class="w-100 card-link"><app-card [patient]='n'></app-card></a>
             </div>
         </div>

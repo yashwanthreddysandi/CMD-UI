@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Chart } from 'chart.js';
+import { Component, Input, OnInit } from '@angular/core';
+import { Chart, registerables } from 'chart.js';
+import { Appointments } from '../shared/Appointment';
+Chart.register(...registerables);
 
 @Component({
   selector: 'app-top-dashboard',
@@ -11,6 +13,8 @@ export class TopDashboardComponent implements OnInit {
   high!:number;
   high1!:number;
   high2!:number;
+
+  @Input("Appointments") Appointments!:Appointments[];
   constructor() {}
 
   ngOnInit(): void {
@@ -26,9 +30,9 @@ export class TopDashboardComponent implements OnInit {
     this.high = bars_data1[i1];
     var bars_data2 =[3, 6, 6, 9, 5, 8, 9]
     let i2 =bars_data2.indexOf(Math.max(...bars_data2));
-    this.high = bars_data[i];
-    this.high1 = bars_data1[i1];
-    this.high2 = bars_data2[i2];
+    // this.high = bars_data[i];
+    // this.high1 = bars_data1[i1];
+    // this.high2 = bars_data2[i2];
     var bars_colors =[
               'rgba(0,0,0,0.2)',
               'rgba(0,0,0,0.2)',
@@ -229,6 +233,14 @@ export class TopDashboardComponent implements OnInit {
       },
     });
     console.log(bars_data)
+  }
+
+  high1Fn() {
+    return this.Appointments.filter(a => a.Status == "accepted").length
+  }
+
+  high2Fn() {
+    return this.Appointments.filter(a => a.Status == "rejected").length
   }
 
 }

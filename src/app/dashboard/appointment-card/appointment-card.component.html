@@ -1,13 +1,13 @@
 
 
 
-<div class="m-3.5" style="padding: 10px;">
+<div class="m-3.5" style="padding: 10px;" *ngIf="Patient!=null">
     <div class="card shadow" style="width: auto; height: auto">
             <div class="card-header" style="padding: 20px">
               <div class="row">
                 <div class="col-5">
                   <img
-                    src="../../assets/profile Image.jpg"
+                    [src]="Patient.Image"
                     alt=""
                     class="responsive"
                     style="
@@ -20,12 +20,14 @@
                 </div>
                 <div class="col-7">
                   <div class="row">
-                    <h5 class="name">{{ Appointment.AppointmentTime }}</h5>
+                    <h5 class="name">{{ Patient.Name }} ({{ Patient.Age}})</h5>
                   </div>
                   <div class="row">
                     <div class="col-6" style="padding: 0; margin: 0">
                       <a
-                        *ngIf="!addParameter"
+                      [routerLink]="['dashboard']"
+                      *ngIf="Appointment.Status === 'pending'"
+                      (click)="accept(Appointment.Id)"
                         class="btn-done"
                         (click)="toggleForm()"
                         ><mat-icon style="color: rgb(197, 197, 197)"
@@ -35,7 +37,9 @@
                     </div>
                     <div class="col-6" style="padding: 0; margin: 0">
                       <a
-                        *ngIf="!addParameter"
+                      [routerLink]="['dashboard']"
+                      *ngIf="Appointment.Status === 'pending'"
+                      (click)="reject(Appointment.Id)"
                         class="btn-can"
                         (click)="toggleForm()"
                         ><mat-icon style="color: rgb(197, 197, 197)"
@@ -45,7 +49,7 @@
                     </div>
                     <div
                       class="col-4"
-                      *ngIf="addParameter"
+                      *ngIf="Appointment.Status === 'accepted'"
                       style="padding: 0; margin: 0"
                     >
                       <mat-icon aria-hidden="false" aria-label="Example home icon"
@@ -55,7 +59,7 @@
                     </div>
                     <div
                       class="col-4"
-                      *ngIf="addParameter"
+                      *ngIf="Appointment.Status === 'accepted'"
                       style="padding: 0; margin: 0"
                     >
                       <mat-icon aria-hidden="false" aria-label="Example home icon"
@@ -65,7 +69,7 @@
                     </div>
                     <div
                       class="col-4"
-                      *ngIf="addParameter"
+                      *ngIf="Appointment.Status === 'accepted'"
                       style="padding: 0; margin: 0"
                     >
                       <mat-icon aria-hidden="false" aria-label="Example home icon"
@@ -80,17 +84,17 @@
               <div class="row">
                 <div class="col-6" style="padding: 0; margin: 0">
                   <div class="row">
-                    <p class="time">10:30</p>
+                    <p class="time">{{Appointment.AppointmentTime | date : 'H:mm'}}</p>
                     <br />
-                    <p class="date">12/06/20</p>
+                    <p class="date">{{Appointment.AppointmentTime | date : 'd/M/yyyy'}}</p>
                   </div>
                 </div>
                 <div class="col-1" style="padding: 0; margin: 0">
                   <span class="vertical2"></span>
                 </div>
                 <div class="col-5 scroll" style="padding: 0; margin: 0">
-                  <p class="allergies">
-                    Allergies recurring sample data for stomach pain malaria headache nausea
+                  <p class="allergies" *ngFor="let ai of activeIssues">
+                    {{ai.Name}}
                   </p>
                 </div>
               </div>

@@ -5,7 +5,7 @@
             <div class="card-head">
               Prescription Detail
             </div>
-            <div class="form-container pt-2">
+            <div class="form-container pt-2" style="height: 95%;">
                 <form [formGroup]="addMedicineForm">
                     <div class="d-flex flex-column align-self-center w-100 ms-4">
                         <input type="text" placeholder="Search For Medicine" class="input-style mb-0" formControlName="medicine"
@@ -22,11 +22,39 @@
                         <input type="number" placeholder="Medicine Duration" class="input-style mb-0" formControlName="duration">
                         <p class="eg-text ms-3">Eg. days</p>
                     </div>
-                    <div class="d-flex flex-row align-self-center w-100 ms-4">
+                    <div class="d-flex flex-row align-self-center w-100 ms-2">
                         <div class="d-flex flex-row">
+                            <mat-accordion >
+                                <mat-expansion-panel hideToggle>
+                                  <p>This is the primary content of the panel.</p>
+                                </mat-expansion-panel>
+                                <mat-expansion-panel (opened)="panelOpenState = true"
+                                                     (closed)="panelOpenState = false">
+                                  <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                      Medicine Cycle
+                                    </mat-panel-title>
+                                    <!-- <mat-panel-description>
+                                      Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                    </mat-panel-description> -->
+                                  </mat-expansion-panel-header>
+                                    <div class="m-1">
+                                        <input type="checkbox" class="" formControlName="morning" id="morning">
+                                        <label for="morning" class="ms-2">Morning</label>
+                                    </div>
+                                    <div class="m-1">
+                                        <input type="checkbox" class="" id="afternoon" formControlName="afternoon">
+                                        <label for="afternoon" class="ms-2">Afternoon</label>
+                                    </div>
+                                    <div class="m-1">
+                                        <input type="checkbox" class="" id="evening" formControlName="evening">
+                                        <label for="evening" class="ms-2">Evening</label>
+                                    </div>
+                                </mat-expansion-panel>
+                              </mat-accordion>
                             <!-- <input type="text" placeholder="Medicine Cycle" class="input-style mb-0">
                             <p class="eg-text ms-3">Eg. talet, vicks</p> -->
-                            <div class="m-2">
+                            <!-- <div class="m-2">
                                 <input type="checkbox" class="" formControlName="morning" id="morning">
                                 <label for="morning">M</label>
                             </div>
@@ -37,7 +65,7 @@
                             <div class="m-2">
                                 <input type="checkbox" class="" id="evening" formControlName="evening">
                                 <label for="evening">E</label>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="d-flex flex-column">
                             <div class="ms-4">
@@ -50,9 +78,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex flex-column align-self-center w-100 ms-4">
+                    <div class="d-flex flex-column align-self-center w-100 ms-4" >
                         <input type="text" placeholder="Medicine Description to Patient" formControlName="description" class="input-style mb-0">
-                        <p class="eg-text ms-3">Eg. don't use hot water to consume tablets</p>
+                        <p class="eg-text ms-3" style="margin-bottom: 0;">Eg. don't use hot water to consume tablets</p>
                     </div>
                 </form>
             </div>
@@ -63,23 +91,23 @@
     </div>
     <div class="col-5">
         <!-- <app-prescription-details [medicine]="newMedicine"></app-prescription-details> -->
-        <div style="margin: 50px; width: 600px;">
+        <div style="margin-left: 50px; width: 600px;">
             <div class="card">
                 <h5 class="card-header" style="padding-top: 20px">
-                    <div class="row" style="font-weight: 700; color: rgb(25, 56, 92)">
+                    <div class="row" >
                         <div class="col-5">
-                            <h3>Prescription Deatils</h3>
+                            <h1 style="font-weight: 700; color: rgb(25, 56, 92)">Prescription Detail's</h1>
                         </div>
                         <div class="col-4 text-right">
-                            <h4>Total : 156</h4>
+                            <h2 style="font-weight: 700; color: rgb(25, 56, 92)">Total : 156</h2>
                         </div>
                         <div class="col-3 text-right">
-                            <h1>3</h1>
+                            <h1 style="font-weight: 700; color: rgb(25, 56, 92)">3</h1>
                         </div>
                     </div>
                 </h5>
                 <div class="card-scroll">
-                    <div class="card-body" *ngFor="let med of newMedicineList let id = index">
+                    <div class="card-body" style="padding-top: 0;" *ngFor="let med of newMedicineList let id = index ">
                         <div class="row">
                             <div class="col-6">
                                 <h5 class="card-title">
@@ -91,44 +119,65 @@
                                 </p>
                             </div>
                             <div class="col-3 price text-right">
-                                <h2>₹35</h2>
+                                <h2>₹{{med.price}}</h2>
                             </div>
                             <div class="col-3">
                                 <div class="row">
-                                    <div class="col-8 food-cycle" style="align-content: center">
+                                    <div class="col-8 food-cycle" style="align-content: center; padding-top: 10px;">
                                         <div class="row" style="margin-left: 0px">
                                             <button class="btn-sm" style="
-                            width: 70px;
-                            border: none;
-                            background-color: rgb(45, 98, 109);
-                            color: white;
-                          font-size: 10px;">
+                                                            width: 70px;
+                                                            border: none;
+                                                            background-color: rgb(45, 98, 109);
+
+                                                            color: white;
+                                                            font-size: 10px;" *ngIf="!med.food">
                                                 after food
                                             </button>
+                                            <button class="btn-sm" style="
+                                            width: 70px;
+                                            border: none;
+                                            background-color: rgb(45,98,109);
+                                            color: white;
+                                            font-size: 10px;" *ngIf="med.food">
+                                before food
+                            </button>
                                         </div>
                                         <div class="row" style="margin-left: 0px; width: 200px">
                                             <ul class="base-timeline">
-                                                <li class="base-timeline__item">
+                                                <li class="base-timeline__item2" *ngIf="med.morning">
                                                     <span class="base-timeline__summary-text"></span>
                                                 </li>
-                                                <li class="base-timeline__item base-timeline__item--active">
+                                                <li class="base-timeline__item" *ngIf="!med.morning">
                                                     <span class="base-timeline__summary-text"></span>
                                                 </li>
-                                                <li class="base-timeline__item">
+                                                <li class="base-timeline__item2 base-timeline__item--active" *ngIf="med.afternoon">
+                                                    <span class="base-timeline__summary-text"></span>
+                                                </li>
+                                                <li class="base-timeline__item base-timeline__item--active" *ngIf="!med.afternoon">
+                                                    <span class="base-timeline__summary-text"></span>
+                                                </li>
+                                                <li class="base-timeline__item2" *ngIf="med.evening">
+                                                    <span class="base-timeline__summary-text"></span>
+                                                </li>
+                                                <li class="base-timeline__item" *ngIf="!med.evening">
                                                     <span class="base-timeline__summary-text"></span>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
+                                   <!-- <div class="col-4" >
+                                        <button class="btn btn-clos text-danger btn-close-yellow"  style="float: right; margin-top: 20px;"></button>
+                                    </div> -->
                                     <div class="col-4" >
-                                        <span class="material-icons" (click)="delete(id)" style="color: red; font-size: 40px; padding-top: 20px">
-                                            close
-                                        </span>
+                                                                
+                                        <button class="btn text-danger"  style="float: right; margin-top: 20px;" (click)="delete(id)"> <i  style="font-size: 20px;" class="fas fa-times"></i></button>
+                                    
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <hr style="width: 90%; margin: 0 auto;">
+                        <hr style="width: 90%; margin: 0 auto; margin-top:10px;">
                     </div>
                     
                 </div>

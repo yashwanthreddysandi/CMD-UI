@@ -26,31 +26,31 @@ export class PatientService {
   }
 
   getPatientDetails(){
-    return this.http.get<any>("http://localhost:59848/api/Patient");
+    return this.http.get<any>("http://cmd-backend.skillassure.com:8091/api/Patient");
   }
 
   getPatientDetailsById(id : number) {
-    return this.http.get<any>(`http://localhost:59848/api/patient/${id}`)
+    return this.http.get<any>(`http://cmd-backend.skillassure.com:8091/api/patient/${id}`)
   }
 
   getAllergies(id: number){
-    return this.http.get<any>(`http://localhost:59848/api/allergy/${id}`);
+    return this.http.get<any>(`http://cmd-backend.skillassure.com:8091/api/allergy/${id}`);
   }
 
   getSymptoms(id: number) {
-    return this.http.get<any>(`http://localhost:59848/api/symptom/${id}`)
+    return this.http.get<any>(`http://cmd-backend.skillassure.com:8091/api/symptom/${id}`)
   }
 
   getActiveIssues(id: number){
-    return this.http.get<any>(`http://localhost:59848/api/activeissue/${id}`)
+    return this.http.get<any>(`http://cmd-backend.skillassure.com:8091/api/activeissue/${id}`)
   }
 
   getMedicalProblems(id: number){
-    return this.http.get<any>(`http://localhost:59848/api/medicalproblem/${id}`)
+    return this.http.get<any>(`http://cmd-backend.skillassure.com:8091/api/medicalproblem/${id}`)
   }
 
   getAppointmentsByPatientId(id:number){
-    return this.http.get<any>(`http://localhost:59281/api/appointment/patient/${id}`)
+    return this.http.get<any>(`http://cmd-backend.skillassure.com:8093/api/appointment/patient/${id}`)
   }
 
 }

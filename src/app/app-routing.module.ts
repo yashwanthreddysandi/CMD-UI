@@ -12,7 +12,8 @@ const routes: Routes = [
   {path: "cardContainer", component: CardsContainerComponent },
   {path: "profile/:id", component: ProfileComponent},
   {path: "sidebar", component:SidebarComponent},
-  {path: "dashboard", component: DashboardComponent}
+  {path: "dashboard", component: DashboardComponent},
+  {path: "", component: DashboardComponent}
 ];
 
 @NgModule({

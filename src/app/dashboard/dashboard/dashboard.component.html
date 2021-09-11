@@ -10,7 +10,7 @@
             </div>
         </div>
         <div >
-            <app-top-dashboard [Appointments]="tempAppoitnments"></app-top-dashboard>
+            <app-top-dashboard [Appointments]="allAppoitnments" ></app-top-dashboard>
         </div>
         <hr style="margin-top: 40px;">
     </div>
@@ -27,7 +27,7 @@
               class="col-lg-3 col-md-6 col-sm-12"
               [style]="n.Status === 'rejected' ? displayNone : ''"
             >
-              <a href="#" class="w-100 card-link"><app-appointment-card [Appointment]="n"></app-appointment-card></a>
+              <a href="#" class="w-100 card-link"><app-appointment-card [Appointment]="n" (parent1)='rejectFn(n)' (parent2)='acceptFn(n)' ></app-appointment-card></a>
             </div>
             <div class="d-flex flex-row justify-content-end">
               <pagination-controls

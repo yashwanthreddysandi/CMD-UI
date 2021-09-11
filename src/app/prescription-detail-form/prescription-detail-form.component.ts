@@ -6,6 +6,7 @@ import * as data from '../shared/medicinedata.json';
 import { Observable } from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
 import { ExcelService } from '../shared/excel.service';
+import { StringMapWithRename } from '@angular/compiler/src/compiler_facade_interface';
 
 @Component({
   selector: 'app-prescription-detail-form',
@@ -20,8 +21,8 @@ export class PrescriptionDetailFormComponent implements OnInit {
 
   control = new FormControl();
   medicineNames : string[] = [];
-  filteredMedicines!: Observable<string[]>;
-  
+  //filteredMedicines!: Observable<string[]>;
+   filteredMedicines!:string[];
   newMedicine : medicineDetails;
   newMedicineList : medicineDetails[];
 
@@ -48,23 +49,24 @@ export class PrescriptionDetailFormComponent implements OnInit {
 
 
   ngOnInit() {
-    this.filteredMedicines = this.control.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
-    
+    // this.filteredMedicines = this.control.valueChanges.pipe(
+    //   startWith(''),
+    //   map(value => this._filter(value))
+    // );
+    this.filteredMedicines = this.medicineNames;
   }
   
 
-  private _filter(value: string): string[] {
-    const filterValue = this._normalizeValue(value);
-    console.log(filterValue);
-    return this.medicineNames.filter(med => this._normalizeValue(med).includes(filterValue));
-  }
+  // private _filter(value: string): string[] {
+  //   const filterValue = this._normalizeValue(value);
+  //   console.log(filterValue);
+  //   return this.medicineNames.filter(med => this._normalizeValue(med).includes(filterValue));
+    
+  // }
 
-  private _normalizeValue(value: string): string {
-    return value.toLowerCase().replace(/\s/g, '');
-  }
+  // private _normalizeValue(value: string): string {
+  //   return value.toLowerCase().replace(/\s/g, '');
+  // }
 
 
   addMedicineFn(){
@@ -132,7 +134,6 @@ export class PrescriptionDetailFormComponent implements OnInit {
     this.excelService.exportAsExcelFile(this.newMedicineList, 'MedicineData');
     //this.exportAsXls();
   }
-
   // exportAsXls(): void {
   //   this.excelService.exportAsExcelFile(this.newMedicineList, 'MedicineData');
   //   console.log("this function is called");

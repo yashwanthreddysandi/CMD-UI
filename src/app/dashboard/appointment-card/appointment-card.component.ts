@@ -16,7 +16,9 @@ export class AppointmentCardComponent implements OnInit {
   Patient!:Patient;
   activeIssues: ActiveIssue[] = [];
 
-  @Input() Appointment!:Appointments;  
+  @Input() Appointment!:Appointments; 
+  @Output('parent1') parent1:EventEmitter<any>=new EventEmitter();
+  @Output('parent2') parent2:EventEmitter<any>=new EventEmitter();
   constructor(private service:AppointmentService, private ps:PatientService) { 
     this.addParameter = false;
     console.log(this.Appointment)
@@ -43,16 +45,20 @@ export class AppointmentCardComponent implements OnInit {
       this.Appointment = data as Appointments;
     })
     // this.Appointment.Status = "accepted"
+    this.parent2.emit();
   }
 
   reject(id:number){
     // this.service.rejectAppointment(id);
+   
     this.service.rejectAppointment(id).subscribe(data => {
       this.Appointment = data as Appointments;
+      
     });
-    window.location.reload();
-  }
+   
+    this.parent1.emit();
 
+  }
 
 
 }

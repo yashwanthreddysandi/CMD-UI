@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { Appointments } from '../shared/Appointment';
@@ -11,9 +12,6 @@ Chart.register(...registerables);
 export class TopDashboardComponent implements OnInit {
 
   high!:number;
-  high1!:number;
-  high2!:number;
-
   @Input("Appointments") Appointments!:Appointments[];
   constructor() {}
 
@@ -234,13 +232,10 @@ export class TopDashboardComponent implements OnInit {
     });
     console.log(bars_data)
   }
-
-  high1Fn() {
-    return this.Appointments.filter(a => a.Status == "accepted").length
-  }
-
-  high2Fn() {
-    return this.Appointments.filter(a => a.Status == "rejected").length
-  }
-
+high1Fn(){
+  return this.Appointments.filter(a=>a.Status=='accepted').length;
+}
+high2Fn(){
+  return this.Appointments.filter(a=>a.Status=='rejected').length;
+}
 }

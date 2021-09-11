@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
 import { Appointments } from '../shared/Appointment';
 import { AppointmentService } from '../shared/appointment.service';
 
@@ -10,7 +10,8 @@ import { AppointmentService } from '../shared/appointment.service';
 export class DashboardComponent implements OnInit {
 
   page:number =1;
-  tempAppoitnments:Appointments[] =[]
+  tempAppoitnments:Appointments[];
+  allAppoitnments:Appointments[];
   totallength!:number
   labels:any ={
     previousLabel:'<',
@@ -20,9 +21,13 @@ export class DashboardComponent implements OnInit {
     display:"none"
   };
   constructor(private service:AppointmentService) {
+    this.tempAppoitnments=[];
+    this.allAppoitnments=[];
     this.service.getAllAppoinments().subscribe(data=>{
       for(let ele of data){
-        if(new Date(ele.AppointmentTime).toLocaleDateString() == new Date().toLocaleDateString() && ele.Status!='rejected')
+        if(new Date(ele.AppointmentTime).toLocaleDateString() == new Date().toLocaleDateString())
+          this.allAppoitnments.push(ele);
+          if(ele.Status!='rejected')
           this.tempAppoitnments.push(ele);
       }})
     this.totallength=this.tempAppoitnments.length;
@@ -30,5 +35,15 @@ export class DashboardComponent implements OnInit {
    }
   ngOnInit(): void {
   }
+  rejectFn(appointment:Appointments){
+    if(appointment.Status=='pending')
+    appointment.Status='rejected';
+    this.tempAppoitnments=this.tempAppoitnments.filter(a=>a.Status!='rejected');
+  }
+  acceptFn(appointment:Appointments){
+    if(appointment.Status=='pending')
+    appointment.Status='accepted';
+  }
+  
 
 }

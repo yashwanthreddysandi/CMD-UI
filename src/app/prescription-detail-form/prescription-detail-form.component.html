@@ -8,14 +8,17 @@
             <div class="form-container pt-2" style="height: 95%;">
                 <form [formGroup]="addMedicineForm">
                     <div class="d-flex flex-column align-self-center w-100 ms-4">
-                        <input type="text" placeholder="Search For Medicine" class="input-style mb-0" formControlName="medicine"
-                        [formControl]="control"
-                        [matAutocomplete]="auto">
-                        <mat-autocomplete #auto="matAutocomplete">
+                        <input type="text" placeholder="Search For Medicine" list="datalistOptions" class="input-style mb-0" formControlName="medicine">
+                        <!-- [formControl]="control" -->
+                        <!-- [matAutocomplete]="auto" -->
+                        <!-- <mat-autocomplete #auto="matAutocomplete">
                             <mat-option *ngFor="let med of filteredMedicines | async" [value]="med">
                               {{med}}
                             </mat-option>
-                        </mat-autocomplete>
+                        </mat-autocomplete> -->
+                        <datalist id="datalistOptions">
+                            <option *ngFor='let v of filteredMedicines' value={{v}}>
+                          </datalist>
                         <p class="eg-text ms-3">Eg. talet, vicks</p>
                     </div>
                     <div class="d-flex flex-column align-self-center w-100 ms-4">

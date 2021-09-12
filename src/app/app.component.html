@@ -4,7 +4,7 @@
   <!-- <app-sidebar></app-sidebar>
 </div> -->
 <!-- <app-profile></app-profile> -->
-<div class="sidebar open">
+<div class="sidebar" [class.open]="currentRoute == '/' || currentRoute == '/dashboard'">
   <div class="logo-details" >    
       <span class="logo_span"><div class="logo_name">CONNECT MY DOC</div></span>
       <i class='bx bx-menu-alt-right'></i>
@@ -14,14 +14,14 @@
     <i class='bx bx-menu-alt-right'></i>
 </div>
   <ul class="nav-list" style="padding-left: 0;">
-    <li class="toggle_link active" onclick="toggle(event)" id="btnOpen">
+    <li class="toggle_link" [class]="currentRoute == '/' || currentRoute == '/dashboard' ? 'active' : ''" onclick="toggle(event)" id="btnOpen">
       <a routerLink="/dashboard" class="active">
         <i class='bx bx-bar-chart-alt-2'></i>
         <span class="links_name">Dashboard</span>
       </a>
        <span class="tooltip">Dashboard</span>
     </li>
-    <li class="toggle_link" onclick="toggle(event)" id="btnClose">
+    <li class="toggle_link" [class.active]="currentRoute == '/cardContainer'" onclick="toggle(event)" id="btnClose">
      <a [routerLink]="['cardContainer']" class="active">
        <i class='far fa-user'></i>
        <span class="links_name">Patients</span>

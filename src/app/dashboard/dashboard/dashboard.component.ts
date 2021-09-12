@@ -25,11 +25,11 @@ export class DashboardComponent implements OnInit {
     this.allAppoitnments=[];
     this.service.getAllAppoinments().subscribe(data=>{
       for(let ele of data){
-        if(new Date(ele.AppointmentTime).toLocaleDateString() == new Date().toLocaleDateString())
+        if(compareDates(new Date(ele.AppointmentTime),new Date())){
           this.allAppoitnments.push(ele);
           if(ele.Status!='rejected')
           this.tempAppoitnments.push(ele);
-      }})
+    }}})
     this.totallength=this.tempAppoitnments.length;
     //console.log(this.tempAppoitnments)
    }
@@ -46,4 +46,19 @@ export class DashboardComponent implements OnInit {
   }
   
 
+}
+
+function compareDates(d1:Date,d2:Date){
+
+  if(d1.getFullYear()>d2.getFullYear())
+
+    return true;
+
+  if(d1.getFullYear()<d2.getFullYear())
+  return false;
+  if(d1.getMonth()>d2.getMonth())
+  return true;
+  if(d1.getMonth()<d2.getMonth())
+  return false;
+  return d1.getDate()>=d2.getDate();
 }

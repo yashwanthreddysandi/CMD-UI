@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Inject, OnInit, Renderer2 } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,14 @@ import { Inject, OnInit, Renderer2 } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'cmd-ui';
-
-  constructor(private _renderer2 :Renderer2, @Inject(DOCUMENT) private _document:Document) { }
+  currentRoute!: string;
+  constructor(private _renderer2 :Renderer2, @Inject(DOCUMENT) private _document:Document, private router:Router) {
+    this.router.events.subscribe(event =>{
+      if (event instanceof NavigationEnd){
+         this.currentRoute = event.url;
+      }
+   })
+   }
 
   ngOnInit(): void {
     let script = this._renderer2.createElement('script');

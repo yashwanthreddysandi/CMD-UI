@@ -16,3 +16,12 @@
     font-size: 40px;
     float: right;
 }
+
+.cross-btn {
+    color: white;
+    font-size: 96px;
+    border-width: 0px;
+    background-color: transparent;
+    margin-top: 40px;
+    margin-right: 20px;
+}

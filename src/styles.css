@@ -4,6 +4,6 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .custom-form-dialog .mat-dialog-container {
-    background-color: transparent;
-    backdrop-filter: blur(4px);
+    background-color: rgb(135, 206, 250, 0.7);
+    backdrop-filter: blur(6px);
 }

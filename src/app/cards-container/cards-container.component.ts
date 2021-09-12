@@ -50,6 +50,7 @@ export class CardsContainerComponent implements OnInit {
       }
     }
     this.tempPatientList = searchedPatientList;
+    this.page = 1;
   }
 
 }

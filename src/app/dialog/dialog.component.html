@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="mat-typography bg-container">
   <div class="container">
     <div class="row">
@@ -18,5 +18,24 @@
       <div style="margin-top: 0;">
         <app-prescription-detail-form></app-prescription-detail-form>
       </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="d-flex flex-row justify-content-around">
+      <div class="">
+        <i class="far fa-file-alt" style="color: white;"></i>
+      </div>
+      <div class="">
+        <h1 class="heading">Prescription</h1>
+      </div>
+      <div class="me-5">
+        <button class="cross-btn" (click)="closeFn()">X</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <app-prescription-detail-form></app-prescription-detail-form>
   </div>
 </div>
